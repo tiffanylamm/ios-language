@@ -61,7 +61,7 @@ struct ConversionView: View {
                 Button {
                     wordBlocks.append(WordBlock(word: "", translatedWord: ""))
                 } label: {
-                    Label("Add Word Pair", systemImage: "plus.circle.fill")
+                    Label("Add Vocab Word", systemImage: "plus.circle.fill")
                         .labelStyle(.titleAndIcon)
                 }
 
