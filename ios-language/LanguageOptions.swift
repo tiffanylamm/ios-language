@@ -2,15 +2,13 @@
 //  LanguageOptions.swift
 //  ios-language
 //
-//  Created by Tiffany Lam on 5/2/25.
-//
 
 import Foundation
 
 struct LanguageOption: Identifiable, Hashable {
     let id = UUID()
     let name: String
-    let code: String // For TTS (e.g., "en-US", "vi-VN")
+    let code: String // For TTS (ex. "en-US", "vi-VN")
 }
 
 let supportedLanguages = [

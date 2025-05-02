@@ -2,8 +2,6 @@
 //  ios_languageTests.swift
 //  ios-languageTests
 //
-//  Created by Tiffany Lam on 5/1/25.
-//
 
 import Testing
 @testable import ios_language

@@ -2,57 +2,6 @@
 //  SavedListDetailView.swift
 //  ios-language
 //
-//  Created by Tiffany Lam on 5/1/25.
-//
-//import SwiftUI
-//
-//struct SavedListDetailView: View {
-//    let list: VocabList
-//    @StateObject var speaker = SpeechPlayer()
-//    @State private var isSpeaking = false
-//    @State private var isPaused = false
-//
-//    var body: some View {
-//        VStack(spacing: 16) {
-//            Text(list.name)
-//                .font(.title)
-//
-//            List(list.vocabPairs, id: \.id) { pair in
-//                VStack(alignment: .leading) {
-//                    Text(pair.word).fontWeight(.bold)
-//                    Text(pair.translated_word).foregroundColor(.secondary)
-//                }
-//            }
-//
-//            HStack(spacing: 20) {
-//                Button {
-//                    if isSpeaking {
-//                        if isPaused {
-//                            speaker.resume()
-//                        } else {
-//                            speaker.pause()
-//                        }
-//                        isPaused.toggle()
-//                    } else {
-//                        speaker.play(vocabPairs: list.vocabPairs)
-//                        isSpeaking = true
-//                        isPaused = false
-//                    }
-//                } label: {
-//                    Text(isSpeaking ? (isPaused ? "Resume" : "Pause") : "Play")
-//                }
-//
-//                Button("Stop") {
-//                    speaker.stop()
-//                    isSpeaking = false
-//                    isPaused = false
-//                }
-//            }
-//            .buttonStyle(.borderedProminent)
-//        }
-//        .padding()
-//    }
-//}
 
 import SwiftUI
 import AVFoundation
@@ -89,7 +38,7 @@ struct SavedListDetailView: View {
                 Button {
                     wordBlocks.append(WordBlock(word: "", translatedWord: ""))
                 } label: {
-                    Label("Add Word Pair", systemImage: "plus.circle.fill")
+                    Label("Add Vocab Word", systemImage: "plus.circle.fill")
                         .labelStyle(.titleAndIcon)
                         .padding()
                 }
@@ -101,14 +50,11 @@ struct SavedListDetailView: View {
                     HStack {
                         Text("\(sourceLang.name)")
                             .font(.subheadline)
-                            
                         
                         Image(systemName: "arrow.right")
 
-
                         Text("\(targetLang.name)")
                             .font(.subheadline)
-                            
                     }
                     List {
                         ForEach(list.vocabPairs, id: \.id) { pair in

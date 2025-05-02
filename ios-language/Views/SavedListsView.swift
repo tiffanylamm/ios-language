@@ -2,53 +2,10 @@
 //  SavedListsView.swift
 //  ios-language
 //
-//  Created by Tiffany Lam on 5/1/25.
-//
 
 import SwiftUI
 import SwiftData
 
-//struct SavedListsView: View {
-//    @Query var vocabLists: [VocabList]
-//    @Environment(\.modelContext) private var context
-//    @State private var showAddView = false
-//
-//    var body: some View {
-//        NavigationStack {
-//            List {
-//                ForEach(vocabLists) { list in
-//                    NavigationLink(destination: SavedListDetailView(list: list)) {
-//                        Text(list.name)
-//                    }
-//                    .swipeActions {
-//                        Button(role: .destructive) {
-//                            context.delete(list)
-//                            try? context.save()
-//                        } label: {
-//                            Label("Delete", systemImage: "trash")
-//                        }
-//                    }
-//                }
-//            }
-//            .navigationTitle("Saved Lists")
-//            .toolbar {
-//                ToolbarItem(placement: .bottomBar) {
-//                    Button {
-//                        showAddView = true
-//                    } label: {
-//                        Image(systemName: "plus.circle.fill")
-//                            .font(.system(size: 28))
-//                    }
-//                }
-//            }
-//            .sheet(isPresented: $showAddView) {
-//                NavigationStack {
-//                    ConversionView(existingList: nil)
-//                }
-//            }
-//        }
-//    }
-//}
 struct SavedListsView: View {
     @Query var vocabLists: [VocabList]
     @Environment(\.modelContext) private var context
@@ -95,7 +52,7 @@ struct SavedListsView: View {
             }
             .sheet(isPresented: $showAddView) {
                 NavigationStack {
-                    ConversionView(existingList: nil)
+                    ConversionView()
                 }
             }
         }

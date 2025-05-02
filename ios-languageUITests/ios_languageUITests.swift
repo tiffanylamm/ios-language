@@ -2,9 +2,6 @@
 //  ios_languageUITests.swift
 //  ios-languageUITests
 //
-//  Created by Tiffany Lam on 5/1/25.
-//
-
 import XCTest
 
 final class ios_languageUITests: XCTestCase {
